@@ -2,3 +2,5 @@
 echo "this is test ..."
 v0.5
 v0.1
+v0.2
+v0.3
