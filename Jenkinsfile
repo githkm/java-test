@@ -25,6 +25,8 @@ pipeline {
         stage('test') {
             steps {
             sh "echo test..."
+            junit '**/target/surefire-reports/TEST-*.xml'
+            archiveArtifacts 'target/*.jar'
             }
         }
         stage('deploy') {
