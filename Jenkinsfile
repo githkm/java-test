@@ -9,6 +9,8 @@ node {
     }
     stage('test') {
         sh "echo test..."
+        junit '**/target/surefire-reports/TEST-*.xml'
+        archiveArtifacts 'target/*.jar'
     }
     stage('deploy') {
         sh "echo deploy..."
