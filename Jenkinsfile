@@ -18,7 +18,7 @@ pipeline {
         stage('test') {
             steps {
             sh "echo test..."
-            pwd
+            sh "pwd"
             }
             post {
                 // If Maven was able to run the tests, even if some of the test
