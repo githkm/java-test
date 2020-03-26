@@ -1,11 +1,16 @@
 node {
+    stage('checkout') {
+        // Get some code from a GitHub repository
+        git branch: 'master', credentialsId: '888451db-2e9d-41a0-9214-8cf81f444260', url: 'git@github.com:githkm/java-test.git'  
+    }
     stage('Build') {
-        echo 'Building....'
+       // Run Maven on a Unix agent.
+       sh "mvn -Dmaven.test.failure.ignore=true clean package"
     }
-    stage('Test') {
-        echo 'Testing....'
+    stage('test') {
+        sh "echo test..."
     }
-    stage('Deploy') {
-        echo 'Deploying....'
+    stage('deploy') {
+        sh "echo deploy..."
     }
 }
