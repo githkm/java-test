@@ -6,7 +6,7 @@ pipeline {
             steps {
             echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             // Get some code from a GitHub repository
-            git branch: 'master', credentialsId: '888451db-2e9d-41a0-9214-8cf81f444260', url: 'git@github.com:githkm/java-test.git'  
+            //git branch: 'master', credentialsId: '888451db-2e9d-41a0-9214-8cf81f444260', url: 'git@github.com:githkm/java-test.git'  
             }
         }
         stage('Build') {
