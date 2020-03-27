@@ -32,6 +32,8 @@ pipeline {
         stage('deploy') {
             steps {
             sh "echo deploy..."
+            sh "[ -f ${JOB_NAME}${env.BRANCH_NAME} ] || mkdir /data/images/${JOB_NAME}/${env.BRANCH_NAME}/ -p "
+            sh "mv -f target/*.jar /data/images/${JOB_NAME}/${env.BRANCH_NAME}/"
             }
         }
     }
